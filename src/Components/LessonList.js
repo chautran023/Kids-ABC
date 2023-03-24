@@ -19,8 +19,10 @@ import hero from '../img/pop-up-next-letter.png';
 import onestar from '../img/Group 167.png';
 import twostar from '../img/Group 166.png';
 import threestar from '../img/Group 121.png';
-
+import backToLesson from '../img/Back.png';
+import Timer from './Timer';
 export default function LessonList ({data, onBack, test}) {
+  const navigate = useNavigate();
   const { speak , voices } = useSpeechSynthesis();
   const [showResults, setShowResults] = useState(false);
   const [popTrue, setpopTrue] = useState(false);
@@ -49,16 +51,16 @@ export default function LessonList ({data, onBack, test}) {
       setpopUnhide(true);
     }
   }
-  else {
-    if (isCorrect) {
-      setScore(score + 1);
-    }
-    if (currentQuestion + 1 < questions.length) {
-      setCurrentQuestion(currentQuestion + 1);
-    } else {
-      playwin();
-      setShowResults(true);
-    }
+    else {
+      if (isCorrect) {
+        setScore(score + 1);
+      }
+      if (currentQuestion + 1 < questions.length) {
+        setCurrentQuestion(currentQuestion + 1);
+      } else {
+        playwin();
+        setShowResults(true);
+      }
   };
   };
 
@@ -73,7 +75,10 @@ export default function LessonList ({data, onBack, test}) {
       setShowResults(true);
     }
   };
-  const navigate = useNavigate();
+  const handleOnComplete = () => {
+    playwin();
+    setShowResults(true);
+  }
 
   function refreshPage() {
     window.location.reload(false);
@@ -85,23 +90,22 @@ export default function LessonList ({data, onBack, test}) {
     setCurrentQuestion(0);
     setShowResults(false);
   };
-  
+ 
   return (
     <div className="lessonlist-container">
     {/* 3. Show results or show the question game  */}
     {showResults & !test ? ( <>
       {/* 4. Final page for Lesson */}
-      <div className='home-top-left position-absolute top-0 start-0'><img src={home} onClick={() => navigate(-1)}/></div>
+      <div className='home-top-left position-absolute top-0 start-0'><img src={backToLesson} onClick={() => onBack()}/></div>
       <div className="final-results position-absolute top-50 start-50 translate-middle">
         <h1>Congratulations on completion of lesson</h1>
         <img src={hero} /> <br/>
         <button onClick={() => restartGame()}>Learn Again</button>
-        <button onClick={() => onBack()}>Back to Lessons</button>
       </div>
       </>
     ) : showResults & test ? (<>
-      <div className='home-top-left position-absolute top-0 start-0'><img src={home} onClick={() => navigate(-1)}/></div>
       {/* 4. Final page for Test Result  */}
+    <div className='home-top-left position-absolute top-0 start-0'><img src={home} onClick={() => navigate(-1)}/></div>
     <div className="final-results position-absolute top-50 start-50 translate-middle">
       <h1>Results</h1>
       <h2>
@@ -125,11 +129,15 @@ export default function LessonList ({data, onBack, test}) {
          <img src={PopWrong} />
         </div> ) : null}
 
-      {/* Current Question  */}
+      {/* Current Question UI */}
       <div className="question">   
-        {/* 2. Current Score  */}
-        {test ? <h2>Score: {score}</h2> : <h2> </h2>}  
-        <div className='home-top-left position-absolute top-0 start-0'><img src={home} onClick={() => navigate(-1)}/></div>   
+        {test ? ( <>
+        <h2>Score: {score}</h2>
+        <div className='home-top-left position-absolute top-0 start-0'><img src={home} onClick={() => navigate(-1)}/></div>
+        <Timer max={5} OnComplete={handleOnComplete} />
+        </> )      
+        : <h2> </h2>}  
+        {!test ? ( <div className='home-top-left position-absolute top-0 start-0'><img src={backToLesson} onClick={() => onBack()}/></div> ) : null}
         <div className = "d-flex justify-content-center">
           <div 
             className="card-content1"

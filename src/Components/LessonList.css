@@ -34,9 +34,31 @@
 
 .home-top-left {
   margin-top: 20px;
-  right: 90%;
+  right: 93%;
 }
-
+.back-top-left{
+  margin-top: 20px;
+  right: 82%;
+}
+.counter-container{
+  right: 60%;
+  font-size: 45px;
+  color: aliceblue;
+}
+.counter{
+  margin-top: -68%;
+  margin-right: 10%;
+  z-index: 1;
+}
+.counter-text{
+  font-family: calibri;
+  font-size: 28px;
+  margin-top: -15%;
+  font-weight: bolder;
+}
+.counter-num{
+  font-size: 60px;
+}
 .comment.unhide {
   cursor: pointer;
   position: fixed;
