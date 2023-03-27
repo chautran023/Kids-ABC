@@ -14,6 +14,7 @@ import useSound from 'use-sound';
 import hoverSfx from '../sound/hover.mp3';
 import winSfx from '../sound/win.mp3';
 import wrongSfx from '../sound/wrong.mp3' ;
+import timeoutSfx from '../sound/timeout.mp3';
 import home from '../img/Home.png';
 import hero from '../img/pop-up-next-letter.png';
 import onestar from '../img/Group 167.png';
@@ -21,6 +22,8 @@ import twostar from '../img/Group 166.png';
 import threestar from '../img/Group 121.png';
 import backToLesson from '../img/Back.png';
 import Timer from './Timer';
+import Load from './Load.js';
+
 export default function LessonList ({data, onBack, test}) {
   const navigate = useNavigate();
   const { speak , voices } = useSpeechSynthesis();
@@ -30,6 +33,7 @@ export default function LessonList ({data, onBack, test}) {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const [play, { stop }] = useSound(hoverSfx);
+  const [playtimeout, { stoptimeout }] = useSound(timeoutSfx , { volume: 0.3 } );
   const [playwin, { stopwin }] = useSound(winSfx , { volume: 0.3 } );
   const [playwrong, { stopwrong }] = useSound(wrongSfx , { volume: 0.3 }) ;
 
@@ -76,8 +80,12 @@ export default function LessonList ({data, onBack, test}) {
     }
   };
   const handleOnComplete = () => {
-    playwin();
-    setShowResults(true);
+    playtimeout();
+    setTimeout(() => {
+      playwin();
+      setShowResults(true);
+    }, 2000);
+   
   }
 
   function refreshPage() {
@@ -93,27 +101,27 @@ export default function LessonList ({data, onBack, test}) {
  
   return (
     <div className="lessonlist-container">
-    {/* 3. Show results or show the question game  */}
+    {/* 3. Show results or show the Question UI  */}
     {showResults & !test ? ( <>
       {/* 4. Final page for Lesson */}
       <div className='home-top-left position-absolute top-0 start-0'><img src={backToLesson} onClick={() => onBack()}/></div>
-      <div className="final-results position-absolute top-50 start-50 translate-middle">
-        <h1>Congratulations on completion of lesson</h1>
-        <img src={hero} /> <br/>
-        <button onClick={() => restartGame()}>Learn Again</button>
+      <div className="final-lesson position-absolute top-50 start-50 translate-middle">
+        {/*<h1>Congratulations on completion of lesson</h1>*/}
+        <img className="img-hero" src={hero} width="700px" /> <br/>
+        <button className="btn-learn-again" onClick={() => restartGame()}  onMouseEnter={() => play()} onMouseLeave={() => stop()}  >Learn Again</button>
       </div>
       </>
     ) : showResults & test ? (<>
       {/* 4. Final page for Test Result  */}
     <div className='home-top-left position-absolute top-0 start-0'><img src={home} onClick={() => navigate(-1)}/></div>
     <div className="final-results position-absolute top-50 start-50 translate-middle">
-      <h1>Results</h1>
+      <img className="results-star" src={score < (2) ? onestar :  score >= (5) ?  threestar  : twostar} /> <br/>
+      <h3>CONGRATULATIONS</h3>
       <h2>
-        {score} / {questions.length} correct (
-        {(score / questions.length) * 100}%)
+        {score} / {questions.length} 
       </h2>
-      <img src={score < (2) ? onestar : (2) <= score <= (4) ? twostar : threestar} /> <br/>
-      <button onClick={() => refreshPage()}>Test Again</button>
+      
+      <button className="btn-test-again" onClick={() => refreshPage()}  onMouseEnter={() => play()} onMouseLeave={() => stop()}   >Test Again</button>
     </div> 
     </>
 

@@ -47,6 +47,19 @@
     transform: scale(110%);
 }
 
+.btn-gallery {
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 10px;
+    
+}
+
+.btn-gallery:hover {
+    transform: scale(110%);
+}
+
+
+
 .btn-qa{
     margin-top: 30px;
     width: 600px;

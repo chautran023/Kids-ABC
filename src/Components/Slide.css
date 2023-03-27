@@ -35,6 +35,14 @@
     margin: 20px auto auto 20px;
     margin-left: 30px;
 }
+
+.card-border1:hover{
+    bottom:10px;
+}
+.slide-hello{
+    top:10px;
+
+}
 .corner-img {
     position: absolute;
     top: 8px;
@@ -51,4 +59,8 @@
 }
 .quantity{
     font-size: 46px;
+}
+
+.home-top-left:hover{
+    transform: scale(105%);
 }

@@ -1,0 +1,38 @@
+.load-container{
+    position: relative;
+    /* border: 2px solid red; */
+    background-image: url("../img/pop-exam.png");
+    background-repeat: no-repeat;
+    height: 55%;
+    width: 55%;
+    margin-top: -30%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.message{
+    position: absolute;
+    /* border: 2px solid red; */
+    width: 70%;
+    height: 66%;
+    margin-top: 8%;
+    margin-left: 20%;
+    color: whitesmoke;
+    font-size: 85px;
+    text-align: center;
+}
+.answer{
+    font-size: 40px;
+    margin-top: 2%;
+}
+.yes{
+    background-color: rgb(255, 196, 0);
+    width: 210px;
+    height: 60px;
+    cursor: pointer;
+}
+.no{
+    background-color: gray;
+    width: 210px;
+    height: 60px;
+    cursor: pointer;
+}

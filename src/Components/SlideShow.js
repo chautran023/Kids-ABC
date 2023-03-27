@@ -48,11 +48,9 @@ export default function SlideShow({ deviceType }) {
         setShowLesson(true);
         //alert(letter);
         lessonLetter = letter;
-       /// console.log('letter: ', lessonLetter);
         for (const eachArray of allLetterArray) {
          if (eachArray.group === lessonLetter) {inputArray.push(eachArray);}
         }
-        console.log('inputArray: ', inputArray);
         setLessonData(inputArray);
     }
     const handleOnBack = () => {
@@ -62,7 +60,6 @@ export default function SlideShow({ deviceType }) {
     return(
         <div>
         <div className='slideshow-container '>
-            {/* <div className='home-top-left position-absolute top-0 start-0'><img src={home} onClick={() => navigate(-1)}/></div> */}
 
             <div>
                 {showLesson ? (<LessonList data={lessonData} onBack={handleOnBack} test={false}/>) : 

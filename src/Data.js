@@ -514,7 +514,7 @@ export const CardD = [
     group: 'D',
     img: Door,
     colortrue: 'HotPink',
-    colorfalse: 'Gold',
+    colorfalse: 'Navy',
     words: 'DOOR',
     mean: 'Cái cửa',
     options: [
@@ -606,7 +606,7 @@ export const CardE = [
     id: 2,
     group: 'E',
     img: Eight,
-    colortrue: 'Nany',
+    colortrue: 'Navy',
     colorfalse: 'HotPink',
     words: 'EIGHT',
     mean: 'Số 8',
