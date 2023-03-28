@@ -89,7 +89,7 @@ export default function Gallery() {
     function Lookup ({ onChoose , content}) {   
         return (
         <div className='lookup-container'>
-            <div className='lookup-content'>Nghĩa tiếng Việt: {content}
+            <div className='lookup-content'>{content}
                 <div className='cancel'onClick={() => onChoose('no')}>Cancel</div>
             </div>
         </div>

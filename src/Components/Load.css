@@ -3,22 +3,23 @@
     /* border: 2px solid red; */
     background-image: url("../img/pop-exam.png");
     background-repeat: no-repeat;
-    height: 55%;
-    width: 55%;
-    margin-top: -30%;
+    height: 968px;
+    width: 1920px;
+    margin-top: -829px;
     margin-left: auto;
     margin-right: auto;
+    background-size: cover; 
+    text-align: center;
 }
 .message{
     position: absolute;
     /* border: 2px solid red; */
-    width: 70%;
-    height: 66%;
-    margin-top: 8%;
-    margin-left: 20%;
+    margin-top: 320px;
+    margin-left: 370px;
     color: whitesmoke;
-    font-size: 85px;
+    font-size: 120px;
     text-align: center;
+    width: 1250px;
 }
 .answer{
     font-size: 40px;
@@ -29,10 +30,22 @@
     width: 210px;
     height: 60px;
     cursor: pointer;
+    margin-left: 100px;
+    margin-right: -250px;
+    border-radius: 10px;
 }
 .no{
     background-color: gray;
     width: 210px;
     height: 60px;
     cursor: pointer;
+    border-radius: 10px;
+}
+
+.yes:hover{
+    transform: scale(110%);
+}
+
+.no:hover{
+    transform: scale(110%);
 }

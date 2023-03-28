@@ -7,6 +7,18 @@
   height: 968px;
   width: 1920px;
 }
+
+.lessonlist-container-test{
+  background-image: url("../img/bg_exam.jpg");
+  background-repeat: no-repeat;
+  background-size: cover; 
+  text-align: center;
+  font-family: "Bubble Bobble";
+  height: 968px;
+  width: 1920px;
+
+
+}
 .final-results h1 , h2{
   color: rgb(250, 94, 3);
     font-size: 100px;
@@ -103,6 +115,51 @@
   margin-top: 10px;
   box-shadow: 5px 10px 18px gray;
 }
+
+.card-content1-test {
+
+  cursor: pointer;
+  background-color: white;
+  border-radius: 5%;
+  width: 500px;
+  height: 580px;
+  margin-top: 130px;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  box-shadow: 5px 10px 18px gray;
+
+}
+
+.card-content1-test:hover{
+  transform: scale(105%);
+  transition: 0.5s ease-in-out;
+}
+
+.card-content2-test {
+  border: 3px solid;
+  border-radius: 5%;
+  position: absolute;
+  width: 440px;
+  height: 530px;
+  margin: 20px auto auto 20px;
+  margin-left: 30px;
+
+}
+.question-score{
+  position: absolute;
+  margin-left: 800px;
+  margin-top: -20px;
+  -webkit-text-stroke: 2px white;;
+  text-shadow: 2px 2px 4px #000000;
+}
+.question-text1-test{
+  font-size: 80px;
+  padding-left: 23px;
+  
+}
+
+
 .card-content1:hover{
   transform: scale(105%);
   transition: 0.5s ease-in-out;
@@ -120,6 +177,13 @@
   font-size: 97px;
   margin-top: -35px;
 }
+
+.question-text2-test{
+  font-size: 97px;
+  margin-top: -10px;
+}
+
+
 .question-text1{
   font-size: 80px;
   padding-left: 23px;
@@ -136,6 +200,12 @@
   width: 435px ;
   height: 375px;
   margin-top: -30px;
+}
+
+.question-img-test{
+  width: 405px ;
+
+  margin-top: -40px;
 }
 
 .option{

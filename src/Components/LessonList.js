@@ -100,7 +100,7 @@ export default function LessonList ({data, onBack, test}) {
   };
  
   return (
-    <div className="lessonlist-container">
+    <div className= {test ? 'lessonlist-container-test' : 'lessonlist-container'}>
     {/* 3. Show results or show the Question UI  */}
     {showResults & !test ? ( <>
       {/* 4. Final page for Lesson */}
@@ -140,24 +140,25 @@ export default function LessonList ({data, onBack, test}) {
       {/* Current Question UI */}
       <div className="question">   
         {test ? ( <>
-        <h2>Score: {score}</h2>
+        <h2 className="question-score">Score: {score}</h2>
         <div className='home-top-left position-absolute top-0 start-0'><img src={home} onClick={() => navigate(-1)}/></div>
-        <Timer max={5} OnComplete={handleOnComplete} />
+        <Timer max={30} OnComplete={handleOnComplete} />
         </> )      
         : <h2> </h2>}  
         {!test ? ( <div className='home-top-left position-absolute top-0 start-0'><img src={backToLesson} onClick={() => onBack()}/></div> ) : null}
+        
         <div className = "d-flex justify-content-center">
           <div 
-            className="card-content1"
+            className  = {test ? 'card-content1-test' : 'card-content1'}    
             onClick={() => speak({text: questions[currentQuestion].words ,  voice: voices[4] }  )}
           >
-          <div className="card-content2" style={{color : questions[currentQuestion].colortrue}}>
+          <div className= {test ? 'card-content2-test' : 'card-content2'}  style={{color : questions[currentQuestion].colortrue}}>
             <div className="d-flex justify-content-between">
-              <h1 className="question-text1" style={{color : questions[currentQuestion].colortrue}}>{questions[currentQuestion].group}</h1>
+              <h1 className= {test ? 'question-text1-test' : 'question-text1'}  style={{color : questions[currentQuestion].colortrue}}>{questions[currentQuestion].group}</h1>
               <img className="question-volume" src={Volume} width="50" height="50"/>
             </div>  
-            <img className="question-img" src={questions[currentQuestion].img} />
-            <h1 className="question-text2" style={{color : questions[currentQuestion].colortrue}}>{questions[currentQuestion].words}</h1>
+            <img className={test ? 'question-img-test' : 'question-img'}   src={questions[currentQuestion].img} />
+            <h1 className= {test ? 'question-text2-test' : 'question-text2'}     style={{color : questions[currentQuestion].colortrue}}>{questions[currentQuestion].words}</h1>
           </div>
           </div>
         </div>
