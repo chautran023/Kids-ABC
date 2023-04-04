@@ -45,17 +45,20 @@
 
 .btn-study:hover{
     transform: scale(110%);
+    cursor: pointer;
 }
 
 .btn-gallery {
     position: absolute;
     margin-top: 20px;
     margin-left: 10px;
+
     
 }
 
 .btn-gallery:hover {
     transform: scale(110%);
+    cursor: pointer;
 }
 
 
@@ -77,6 +80,7 @@
     text-align: center;
     font-size: 65px;
     color: white;
+    cursor: pointer;
 
 }
 

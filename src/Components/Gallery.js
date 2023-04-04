@@ -114,7 +114,7 @@ export default function Gallery() {
                                 <div className="border2" style={{color : card.colortrue}}>
                                     <div className="d-flex justify-content-between">
                                         <h1 className="text1" style={{color : card.colortrue}}>{card.group}</h1>
-                                        <img className="volume" src={Volume} width="25" height="25"onClick={() => speak({text: card.words ,  voice: voices[4] }  )}/>
+                                        <img className="volume" src={Volume} width="25" height="25"onClick={() => speak({text: card.words ,  voice: voices[3] }  )}/>
                                         <img className="lookup" src={LookUp} width="40" height="40" onClick={() => handleLookup(card.words)} />
                                     </div>  
                                     <img className="img" src={card.img} />

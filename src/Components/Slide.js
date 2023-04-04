@@ -94,7 +94,7 @@ const responsive = {
 const Slide = ({onClickItem}) => {
   return (
     <div className="slide-lesson">
-    <img classNam="slide-hello" src={imgHello} />
+    <img className="slide-hello" src={imgHello} />
     <Carousel
       responsive={responsive}
       //showDots={true}

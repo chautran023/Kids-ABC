@@ -40,7 +40,9 @@
     bottom:10px;
 }
 .slide-hello{
-    top:10px;
+
+    margin-top: 20px;
+    margin-bottom: 20px;
 
 }
 .corner-img {

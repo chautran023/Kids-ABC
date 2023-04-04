@@ -22,7 +22,7 @@ import twostar from '../img/Group 166.png';
 import threestar from '../img/Group 121.png';
 import backToLesson from '../img/Back.png';
 import Timer from './Timer';
-import Load from './Load.js';
+
 
 export default function LessonList ({data, onBack, test}) {
   const navigate = useNavigate();
@@ -150,7 +150,7 @@ export default function LessonList ({data, onBack, test}) {
         <div className = "d-flex justify-content-center">
           <div 
             className  = {test ? 'card-content1-test' : 'card-content1'}    
-            onClick={() => speak({text: questions[currentQuestion].words ,  voice: voices[4] }  )}
+            onClick={() => speak({text: questions[currentQuestion].words ,  voice: voices[3] }  )}
           >
           <div className= {test ? 'card-content2-test' : 'card-content2'}  style={{color : questions[currentQuestion].colortrue}}>
             <div className="d-flex justify-content-between">
@@ -170,7 +170,7 @@ export default function LessonList ({data, onBack, test}) {
             return (
               <div className='option' style={{backgroundColor : option.isCorrect ? questions[currentQuestion].colortrue : questions[currentQuestion].colorfalse}}
                 key={option.id}
-                onClick={() => optionClicked(option.isCorrect)}  onMouseEnter={() => speak({text: option.text,  voice: voices[4] }  )} 
+                onClick={() => optionClicked(option.isCorrect)}  onMouseEnter={() => speak({text: option.text,  voice: voices[3] }  )} 
               >
                 {option.text} 
               </div>
