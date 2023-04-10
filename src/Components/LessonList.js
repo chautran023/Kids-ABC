@@ -158,7 +158,7 @@ export default function LessonList ({data, onBack, test}) {
               <img className="question-volume" src={Volume} width="50" height="50"/>
             </div>  
             <img className={test ? 'question-img-test' : 'question-img'}   src={questions[currentQuestion].img} />
-            <h1 className= {test ? 'question-text2-test' : 'question-text2'}     style={{color : questions[currentQuestion].colortrue}}>{questions[currentQuestion].words}</h1>
+            <h3 className= {test ? 'question-text2-test' : 'question-text2'}     style={{color : questions[currentQuestion].colortrue}}>{questions[currentQuestion].words}</h3>
           </div>
           </div>
         </div>
