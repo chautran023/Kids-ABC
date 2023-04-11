@@ -20,7 +20,7 @@
     animation-name: upanddown;
     animation-duration: 3s;
     position: relative;
-    animation-iteration-count: 10;
+    animation-iteration-count: infinite;
 }
 
 .btn-study{
